@@ -1,0 +1,272 @@
+<html>
+
+<head>
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    nav.navbar .dropdown-menu.profile {
+    min-width: 250px;
+    margin-top: 20px;
+    left:0;
+    padding: 15px 0;
+    max-width: 400px;
+    border-radius: 0;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px 0 2px rgba(0, 0, 0, 0.1);
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius:3px 3px;
+  float: left;
+  width: 100px;
+  height:120px;
+  background-color:#e00f3d;
+  color:white;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  font-size:12px;
+  padding: 3px auto;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<!--====================================================
+                         MAIN NAVBAR
+======================================================-->
+<header class="header" style="position: -webkit-sticky;position: sticky;top: 0; z-index:1000;">
+    <nav class="navbar navbar-expand-lg " style="position: -webkit-sticky;position: sticky;top: 0; z-index:999;">
+        <div class="search-box">
+            <button class="dismiss"><i class="icon-close"></i></button>
+            <form id="searchForm" action="#" role="search">
+                <input type="search" placeholder="Search Now" class="form-control">
+            </form>
+        </div>
+        <div class="container-fluid ">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">
+                        <div class="brand-text brand-big hidden-lg-down"><img src="img/logo-white.png" alt="Logo" class="img-fluid"></div>
+                        <div class="brand-text brand-small" style="margin-left:10px"><img src="img/icga_logo_small.png" alt="Logo" class="img-fluid" ></div>
+                    </a>
+                    <a id="toggle-btn" href="#" class="menu-btn active">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Expand-->
+                <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                <!-- Search
+                <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                -->
+                <!-- Notifications-->
+                <li class="nav-item dropdown" style="margin-top:5px">
+                    <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><span class="noti-numb-bg"></span><span class="badge">0</span></a>
+                    <ul aria-labelledby="notifications" class="dropdown-menu">
+
+                        <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>no notifications                                            </strong></a></li>
+                    </ul>
+                </li>
+                <!-- Messages                        -->
+                <li class="nav-item dropdown" style="margin-top:5px"> <a id="messages" class="nav-link logout" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope-o"></i><span class="noti-numb-bg"></span><span class="badge">0</span></a>
+                    <ul aria-labelledby="messages" class="dropdown-menu">
+
+                        <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>no messages    </strong></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/profile.png" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
+                    <ul aria-labelledby="profile" class="dropdown-menu profile" >
+                        <li>
+                            <a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                <div class="msg-profile"> <img src="img/profile.png" alt="..." class="img-fluid rounded-circle"></div>
+                                <div class="msg-body">
+                                    <h3 class="h5">Lutfur Rahman</h3><span>lutfur@gmail.com</span>
+                                </div>
+                            </a>
+                            <hr>
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <div class="notification">
+                                    <div class="notification-content"><i class="fa fa-user "></i>My Profile</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <div class="notification">
+                                    <div class="notification-content"><i class="fa fa-envelope-o"></i>Inbox</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <div class="notification">
+                                    <div class="notification-content"><i class="fa fa-cog"></i>Setting</div>
+                                </div>
+                            </a>
+                            <hr>
+                        </li>
+                        <li>
+                            <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                <div class="notification">
+                                    <div class="notification-content"><i class="fa fa-power-off"></i>Logout</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item d-flex align-items-center"><a id="menu-toggle-right" class="nav-link" href="#"><i class="fa fa-cart-arrow-down" style="font-size:20px"></i></a></li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+<div class="page-content d-flex align-items-stretch">
+
+    <!--***** SIDE NAVBAR *****-->
+    <nav class="side-navbar" style="position: -webkit-sticky;position: sticky;top: 0; z-index:1;">
+        <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="img/member-1.png" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="title">
+                <h1 class="h4">Lutfur Rahman</h1>
+            </div>
+        </div>
+        <hr>
+        <!-- Sidebar Navidation Menus-->
+        <ul class="list-unstyled">
+            <li class="active"> <a href="index.html"><i class="icon-home"></i>Home</a></li>
+            <li><a href="#apps" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Directories</a>
+                <ul id="apps" class="collapse list-unstyled">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="email.html">Email</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
+                </ul>
+            </li>
+
+            <li> <a href="maps.html"> <i class="fa fa-map-o"></i>News </a></li>
+            <li><a href="#pages" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-file-o"></i>Profile </a>
+                <ul id="pages" class="collapse list-unstyled">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="empty.html">Empty</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="search-result.html">Search Result</a></li>
+                    <li><a href="404.html">404</a></li>
+                </ul>
+            </li>
+            <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
+            <li><a href="#elements" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-globe"></i>UI Elements </a>
+                <ul id="elements" class="collapse list-unstyled">
+                    <li><a href="ui-buttons.html">Buttons</a></li>
+                    <li><a href="ui-cards.html">Cards</a></li>
+                    <li><a href="ui-progressbars.html">Progress Bar</a></li>
+                    <li><a href="ui-timeline.html">Timeline</a></li>
+                </ul>
+            </li>
+        </ul><span class="heading">Extras</span>
+        <ul class="list-unstyled">
+            <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
+        </ul>
+    </nav>
+
+    <div class="content-inner">
+        <img src="img/icga_banner.jpg" style="width:150px;height:auto;display:block;margin:5px auto 5px auto;" >
+        <!--***** REPORT-1 *****-->
+        <div class="row" id="report1">
+            <div class="col-xl-6">
+                <div class="gallery">
+                    <a target="_blank" href="img/image_1.png">
+                        <img src="img/image_1.png" alt="Cinque Terre" width="600" height="400">
+                    </a>
+                    <div class="desc">My Profile</div>
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="img/executives.png">
+                        <img src="img/executives.png" alt="My profile" width="600" height="400">
+                    </a>
+                    <div class="desc" align="center">Executive Members</div>
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="img/directories.png">
+                        <img src="img/directories.png" alt="Northern Lights" width="600" height="400">
+                    </a>
+                    <div class="desc">Directories</div>
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="img/notice.png">
+                        <img src="img/notice.png" alt="Mountains" width="600" height="400">
+                    </a>
+                    <div class="desc">Notice Board</div>
+                </div>
+                <div class="gallery">
+                    <a target="_blank" href="img/conference.png">
+                        <img src="img/conference.png" alt="Mountains" width="600" height="400">
+                    </a>
+                    <div class="desc">The Council</div>
+                </div>
+                <div class="gallery">
+                    <a target="_blank" href="img/event-calender.png">
+                        <img src="img/event-calender.png" alt="Mountains" width="600" height="400">
+                    </a>
+                    <div class="desc">Event Calender</div>
+                </div>
+                <div class="gallery">
+                    <a target="_blank" href="img/publications.png">
+                        <img src="img/publications.png" alt="Mountains" width="600" height="400">
+                    </a>
+                    <div class="desc">Publications</div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!--Global Javascript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/front.js"></script>
+
+<!--Core Javascript -->
+<script src="js/mychart.js"></script>
+</body>
+
+</html>
